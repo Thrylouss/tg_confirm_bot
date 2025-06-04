@@ -1,10 +1,11 @@
-# app.py — точка входа. Flask приложение и webhook обработка
+# app.py — точка входа на сервере (Flask + Webhook)
 
 from flask import Flask, request
 from bot import handle_update
 import config
 
 app = Flask(__name__)
+
 
 @app.route(f"/{config.BOT_TOKEN}/", methods=["POST"])
 def webhook():
